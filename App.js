@@ -14,9 +14,9 @@ import {
   Colors,
   Header,
 } from 'react-native/Libraries/NewAppScreen';
-import Employees from './Components/Employee';
-import Profile from './Components/Profile';
-import ErrorBoundry from './Components/errorBoundry';
+import Employees from './src/Employee';
+import Profile from './src/Profile';
+import ErrorBoundry from './src/errorBoundry';
 
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';

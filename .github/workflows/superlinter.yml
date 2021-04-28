@@ -40,11 +40,11 @@ jobs:
 #         uses: wearerequired/lint-action@v1.9.0
 #       - name: Analyze code statically using ESLint
 #         uses: moneyforward/eslint-action@v0
-#       - name: Run linters
-#         uses: wearerequired/lint-action@v1
-#         with:
-#           eslint: true
-#           prettier: true
+      - name: Run linters (ESLINT)
+        uses: wearerequired/lint-action@v1
+        with:
+          eslint: true
+          prettier: true
 
 #       - name: Gradel Clean
 #         run: chmod +x ./gradlew
@@ -71,10 +71,10 @@ jobs:
           
           
           
-      - name: Install Pod Dependencies (IOS)
-        run: cd ./ios && pod install && cd ..       
-      - name: Build iOS (debug)
-        run: "xcodebuild \ -workspace ios/HelloReactNative.xcworkspace \ -scheme HelloReactNative \ clean archive \ -sdk iphoneos \ -configuration Debug \ -UseModernBuildSystem=NO \ -archivePath $PWD/HelloReactNative \ CODE_SIGNING_ALLOWED=NO"
+#       - name: Install Pod Dependencies (IOS)
+#         run: cd ./ios && pod install && cd ..       
+#       - name: Build iOS (debug)
+#         run: "xcodebuild \ -workspace ios/HelloReactNative.xcworkspace \ -scheme HelloReactNative \ clean archive \ -sdk iphoneos \ -configuration Debug \ -UseModernBuildSystem=NO \ -archivePath $PWD/HelloReactNative \ CODE_SIGNING_ALLOWED=NO"
 #         env: 
 #           DEFAULT_BRANCH: main
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

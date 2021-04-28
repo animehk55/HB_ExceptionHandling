@@ -52,7 +52,8 @@ jobs:
         with:
           name: android-apk
           path: '**/*.apk'
-          
+      - name: Build iOS (debug)
+        run: "xcodebuild \ -workspace ios/HelloReactNative.xcworkspace \ -scheme HelloReactNative \ clean archive \ -sdk iphoneos \ -configuration Debug \ -UseModernBuildSystem=NO \ -archivePath $PWD/HelloReactNative \ CODE_SIGNING_ALLOWED=NO"
 #         env: 
 #           DEFAULT_BRANCH: main
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

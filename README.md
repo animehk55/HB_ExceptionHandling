@@ -75,3 +75,7 @@ https://blog.codemagic.io/testing-react-native-apps-with-jest/
 
 <!-- Why check -->
 https://stackoverflow.com/questions/48524417/should-the-package-lock-json-file-be-added-to-gitignore
+
+
+<!-- Mattermost can be integrated with Super Admin Account Access Only -->
+https://www.youtube.com/watch?v=4LmU7I83poE

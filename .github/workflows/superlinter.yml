@@ -40,11 +40,11 @@ jobs:
 #         uses: wearerequired/lint-action@v1.9.0
 #       - name: Analyze code statically using ESLint
 #         uses: moneyforward/eslint-action@v0
-      - name: Run linters (ESLINT)
-        uses: wearerequired/lint-action@v1
-        with:
-          eslint: true
-          prettier: true
+#       - name: Run linters (ESLINT)
+#         uses: wearerequired/lint-action@v1
+#         with:
+#           eslint: true
+#           prettier: true
 
 #       - name: Gradel Clean
 #         run: chmod +x ./gradlew

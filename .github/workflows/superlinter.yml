@@ -32,7 +32,10 @@ jobs:
 #       - name: Run Super-Linter
 #         uses: github/super-linter@v3
       - name: Run ESLint
-        run: .eslintrc.js
-        env: 
-          DEFAULT_BRANCH: main
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        uses: reviewdog/action-eslint@v1
+        with:
+          reporter: github-pr-review # Change reporter.
+          eslint_flags: 'src/'
+#         env: 
+#           DEFAULT_BRANCH: main
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

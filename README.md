@@ -8,6 +8,7 @@ https://github.com/realabbas/Github-Actions-React-Native
 https://dev.to/realabbas/react-native-github-actions-228l
 https://github.com/marketplace/actions/lint-action
 https://github.com/airbnb/javascript/issues/2066  (Eslint error)
+https://github.com/airbnb/javascript/issues/2156 (Eslint error)
 <!--  -->
 <!--  -->
 <!--  -->

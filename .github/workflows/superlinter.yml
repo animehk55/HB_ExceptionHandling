@@ -17,15 +17,17 @@ jobs:
     steps: 
       - name: Checkout code
         uses: actions/checkout@v2       
-      - uses: actions/setup-node@master
-      - uses: c-hive/gha-yarn-cache@v1
+      - name: Hive Actions
+        uses: actions/setup-node@master
+      - name: Hive C-Hive
+        uses: c-hive/gha-npm-cache@v1
 
       - name: Install node modules
         run: |
-          yarn install
+          npm install
       - name: Run test
         run: |
-          yarn test-ci
+          npm test-ci
         
       - name: Run Super-Linter
         uses: github/super-linter@v3

@@ -24,7 +24,7 @@ jobs:
 
       - name: Install node modules
         run: |
-          npm install && npm install --save eslint-config-airbnb && npm install eslint-plugin-jsx-a11y@latest --save-dev
+          npm install && npm install --save eslint-config-airbnb && npm install eslint-plugin-jsx-a11y@latest --save-dev && npm install eslint-plugin-import@latest --save-dev
       - name: Run test
         run: |
           npm test

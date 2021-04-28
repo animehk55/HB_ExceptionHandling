@@ -36,6 +36,8 @@ jobs:
         with:
           reporter: github-pr-review # Change reporter.
           eslint_flags: 'src/'
+      - name: Analyze code statically using ESLint
+        uses: moneyforward/eslint-action@v0
 #         env: 
 #           DEFAULT_BRANCH: main
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

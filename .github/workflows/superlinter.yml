@@ -45,13 +45,33 @@ jobs:
 #         with:
 #           eslint: true
 #           prettier: true
+      - name: Gradel Clean
+        run: chmod +x ./gradlew
+      
+      
       - name: Build Android apk (debug)
         run: ./gradlew assembleDebug -Dorg.gradle.logging.level=info
         working-directory: android
-      - uses: actions/upload-artifact@v2
+      - name: Upload Artifact Release
+        uses: actions/upload-artifact@v2
         with:
           name: android-apk
           path: '**/*.apk'
+#           name: app-release.apk
+#           path: android/app/build/outputs/apk/release/
+      - name: Build Android ( Release ) 
+        run: |
+          cd android && ./gradlew assembleRelease
+      - name: Upload Artifact Release Android
+        uses: actions/upload-artifact@v2
+        with:
+          name: android-apk-release
+          path: '**/*.apk'
+          
+          
+          
+      - name: Install Pod Dependencies (IOS)
+        run: cd ./ios && pod install && cd ..       
       - name: Build iOS (debug)
         run: "xcodebuild \ -workspace ios/HelloReactNative.xcworkspace \ -scheme HelloReactNative \ clean archive \ -sdk iphoneos \ -configuration Debug \ -UseModernBuildSystem=NO \ -archivePath $PWD/HelloReactNative \ CODE_SIGNING_ALLOWED=NO"
 #         env: 

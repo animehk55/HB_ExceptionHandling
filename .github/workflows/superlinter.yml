@@ -58,7 +58,7 @@ jobs:
       - name: Upload Artifact Release
         uses: actions/upload-artifact@v2
         with:
-          name: android-apk
+          name: android-apk-debug
           path: '**/*.apk'
 #           name: app-release.apk
 #           path: android/app/build/outputs/apk/release/

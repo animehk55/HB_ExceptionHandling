@@ -49,9 +49,10 @@ jobs:
 #       - name: Gradel Clean
 #         run: chmod +x ./gradlew
       
-      
       - name: Build Android apk (debug)
-        run: ./gradlew assembleDebug -Dorg.gradle.logging.level=info
+#         run: ./gradlew assembleDebug -Dorg.gradle.logging.level=info
+        run: |
+          cd android && ./gradlew assembleDebug
         working-directory: android
       - name: Upload Artifact Release
         uses: actions/upload-artifact@v2

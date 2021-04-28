@@ -13,19 +13,18 @@
 //   renderer.create(<App />);
 // });
 
-import React from "react";
-import renderer from "react-test-renderer";
-import App from "../App.js";
+import React from 'react';
+import renderer from 'react-test-renderer';
+import App from '../App.js';
 
-describe("<App />", () => {
+describe('<App />', () => {
   it('has 2 child', () => {
     const tree = renderer.create(<App />).toJSON();
     expect(tree.children.length).toBe(2);
-  })
+  });
 
   it('renders correctly across screens', () => {
     const tree = renderer.create().toJSON();
     expect(tree).toMatchSnapshot();
   });
-})
-
+});

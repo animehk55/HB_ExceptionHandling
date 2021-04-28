@@ -40,11 +40,19 @@ jobs:
 #         uses: wearerequired/lint-action@v1.9.0
 #       - name: Analyze code statically using ESLint
 #         uses: moneyforward/eslint-action@v0
-      - name: Run linters
-        uses: wearerequired/lint-action@v1
+#       - name: Run linters
+#         uses: wearerequired/lint-action@v1
+#         with:
+#           eslint: true
+#           prettier: true
+      - name: Build Android apk (debug)
+        run: ./gradlew assembleDebug -Dorg.gradle.logging.level=info
+        working-directory: android
+      - uses: actions/upload-artifact@v2
         with:
-          eslint: true
-          prettier: true
+          name: android-apk
+          path: '**/*.apk'
+          
 #         env: 
 #           DEFAULT_BRANCH: main
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

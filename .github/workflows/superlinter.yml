@@ -8,6 +8,7 @@ on:
     branches: 
       - master
       - develop
+      - RN_initTesting
       
 jobs:
   super-lint:
@@ -15,7 +16,16 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v2       
+      - uses: actions/setup-node@master
+      - uses: c-hive/gha-yarn-cache@v1
+
+      - name: Install node modules
+        run: |
+          yarn install
+      - name: Run test
+        run: |
+          yarn test-ci
         
       - name: Run Super-Linter
         uses: github/super-linter@v3

@@ -55,7 +55,7 @@ jobs:
 #         run: |
 #           cd ./android && ./gradlew assembleDebug
         working-directory: android
-      - name: Upload Artifact Release
+      - name: Upload Artifact Debug
         uses: actions/upload-artifact@v2
         with:
           name: android-apk-debug

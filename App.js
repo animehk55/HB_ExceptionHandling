@@ -10,10 +10,7 @@ import {
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  Header,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors, Header} from 'react-native/Libraries/NewAppScreen';
 import Employees from './Components/Employee';
 import Profile from './Components/Profile';
 import ErrorBoundry from './Components/errorBoundry';
@@ -24,7 +21,7 @@ const App: () => Node = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-// Develop branch from master
+  // Develop branch from master
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
@@ -32,17 +29,11 @@ const App: () => Node = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
-
         <Text style={{fontSize: 20, alignSelf: 'center'}}>
           Employee Details{' '}
         </Text>
       </ScrollView>
-      <ErrorBoundry>
-        <Profile profileImage={'https://reactnative.dev/img/tiny_logo.png'} />
-      </ErrorBoundry>
-      <ErrorBoundry>
-        <Employees />
-      </ErrorBoundry>
+      <Employees />
     </SafeAreaView>
   );
 };

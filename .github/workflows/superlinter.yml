@@ -70,7 +70,9 @@ jobs:
         with:
           name: android-apk-release
           path: '**/*.apk'
-          
+      - name: Mattermost
+        uses: mattermost/action-mattermost-notify@1.0.2
+
           
           
 #       - name: Install Pod Dependencies (IOS)

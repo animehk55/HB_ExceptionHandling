@@ -1,0 +1,44 @@
+# This is a basic workflow that is manually triggered
+
+name: Github Actions Flow
+
+on: 
+  pull_request:
+  push: 
+    branches: 
+      - master
+      - develop
+      
+jobs:
+  test: 
+    name: Running Units Tests
+    runs-on: Ubuntu-latest
+    
+    steps: 
+    - user: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with: 
+        node-version: ${{ matrix.node-version }}
+    - name: Install 
+      run: npm install
+    - name: Test 
+      run: npm test
+  strategy : 
+    matrix : 
+      node-version: [0.x, 10.x, 12.x]
+    
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+     - uses : actions/checkout@v1
+     - name : Use Node.js $({ matrix.node-version })
+       uses : actions/setup-node@v3
+       with : 
+            node-version: $({ matrix.node-version })
+     - name : npm install, build, and test
+            run: |
+              npm ci
+              npm run build --if-pressent
+              npm test
+            env : 
+              CI : true

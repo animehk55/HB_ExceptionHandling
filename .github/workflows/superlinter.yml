@@ -31,15 +31,20 @@ jobs:
         
 #       - name: Run Super-Linter
 #         uses: github/super-linter@v3
-      - name: Run ESLint
-        uses: reviewdog/action-eslint@v1
+#       - name: Run ESLint
+#         uses: reviewdog/action-eslint@v1
+#         with:
+#           reporter: github-pr-review # Change reporter.
+#           eslint_flags: 'src/'
+#       - name: Lint Action (Homepage)
+#         uses: wearerequired/lint-action@v1.9.0
+#       - name: Analyze code statically using ESLint
+#         uses: moneyforward/eslint-action@v0
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
         with:
-          reporter: github-pr-review # Change reporter.
-          eslint_flags: 'src/'
-      - name: Lint Action (Homepage)
-        uses: wearerequired/lint-action@v1.9.0
-      - name: Analyze code statically using ESLint
-        uses: moneyforward/eslint-action@v0
+          eslint: true
+          prettier: true
 #         env: 
 #           DEFAULT_BRANCH: main
 #           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

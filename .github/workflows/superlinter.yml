@@ -27,7 +27,7 @@ jobs:
           npm install
       - name: Run test
         run: |
-          npm test-ci
+          npm test
         
       - name: Run Super-Linter
         uses: github/super-linter@v3

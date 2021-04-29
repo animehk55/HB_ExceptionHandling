@@ -108,7 +108,7 @@ jobs:
       - name: Upload Artifact Release Android
         uses: actions/upload-artifact@v2
         with:
-          name: ${{ github.event.head_commit.message }}-release
+          name: ${{ github.event.commits[0].message }}-release
           path: '**/*.apk'
 
 #       - name: Mattermost

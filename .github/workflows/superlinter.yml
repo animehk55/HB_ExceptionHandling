@@ -53,11 +53,13 @@ jobs:
 #         run: chmod +x ./gradlew
       
 
-      - name: Extract branch name
-        shell: bash
-        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
-        id: extract_branch      
-
+      - name: Get branch names.
+        id: branch-names
+        uses: tj-actions/branch-names@v4
+        
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ steps.branch-names.outputs.base_ref_branch }}
 
       - name: Extract branch name ${{ github.event.commits[0].message }} github.event_name
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"

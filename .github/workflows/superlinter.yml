@@ -54,9 +54,10 @@ jobs:
       
       
 
-       # print branch name
-      - name: Get branch name
-        run: echo 'The branch name is' $BRANCH_NAME
+       - name: Extract branch name
+         shell: bash
+         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+         id: extract_branch
 
 
 

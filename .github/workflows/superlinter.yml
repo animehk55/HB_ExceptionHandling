@@ -7,8 +7,8 @@ on:
   push: 
     branches: 
       - master
-      - develop
-      - RN_initTesting
+      - develop1
+      - develop2
       
 jobs:
   super-lint:

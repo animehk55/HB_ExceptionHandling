@@ -98,7 +98,7 @@ jobs:
       - name: Upload Artifact Debug
         uses: actions/upload-artifact@v2
         with:
-          name: android-apk-debug
+          name: ${{ github.event.head_commit.message }}-debug
           path: '**/*.apk'
 #           name: app-release.apk
 #           path: android/app/build/outputs/apk/release/
@@ -108,7 +108,7 @@ jobs:
       - name: Upload Artifact Release Android
         uses: actions/upload-artifact@v2
         with:
-          name: android-apk-release
+          name: ${{ github.event.head_commit.message }}-release
           path: '**/*.apk'
 
 #       - name: Mattermost

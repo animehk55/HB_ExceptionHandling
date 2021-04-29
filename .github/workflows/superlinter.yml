@@ -53,6 +53,13 @@ jobs:
 #         run: chmod +x ./gradlew
       
       
+
+       # print branch name
+      - name: Get branch name
+        run: echo 'The branch name is' $BRANCH_NAME
+
+
+
       - name : GITHUB CONTEXT
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}

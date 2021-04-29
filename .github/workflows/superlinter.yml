@@ -54,7 +54,7 @@ jobs:
       
       
 
-      - name: Extract branch name ${{ github.event.commits[0].message }}
+      - name: Extract branch name ${{ github.event.commits[0].message }} github.event_name
         run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
         id: extract_branch
 

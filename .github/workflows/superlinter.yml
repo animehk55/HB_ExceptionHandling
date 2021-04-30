@@ -2,20 +2,20 @@
 
 name: Github Actions Flow
 
-on: 
+on: pull_request
 #   pull_request:
 #   push: 
 #     branches: 
 #       - master
 #       - develop1
 #       - develop2
-  pull_request_review:
-      branches: 
-      - develop1
-      - develop2
+  # pull_request_review:
+  #     branches: 
+  #     - develop1
+  #     - develop2
 
-      types:
-      - submitted
+  #     types:
+  #     - submitted
       
 jobs:
   super-lint:

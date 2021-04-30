@@ -12,6 +12,8 @@ on:
   pull_request_review:
       branches: 
       - develop1
+      - develop2
+
       types:
       - submitted
       

@@ -10,7 +10,6 @@ on:
       - develop1
       - develop2
       
-      
 jobs:
   super-lint:
     name: Lint code base 
